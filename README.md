@@ -1,4 +1,4 @@
-# Umut Bayraktar - Portfolio
+# Ashish Rokade - Portfolio
 
 Modern, high-performance portfolio website built with Next.js 15, Once UI, and TypeScript. Showcasing projects, experience, and technical expertise as a Full-Stack Developer and Founder of CodeShare Technology Ltd.
 
@@ -28,7 +28,7 @@ Modern, high-performance portfolio website built with Next.js 15, Once UI, and T
 
 ```bash
 # Clone the repository
-git clone https://github.com/umutxyp/Personal-Website.git
+git clone https://github.com/Ashishr944/Portfolio-of-Ashish-Rokade
 
 # Navigate to project directory
 cd Personal-Website
@@ -155,8 +155,8 @@ The `/github` page automatically fetches your public repositories. Update your G
 
 ```typescript
 github: {
-  username: "umutxyp",
-  highlight: ["CodeShare", "Beatra", "MusicBot"],
+  username: "Ashishr944",
+  highlight: [],
 }
 ```
 
@@ -180,12 +180,11 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Connect
 
-- **Website:** [umutbayraktar.vercel.app](https://umutbayraktar.vercel.app)
-- **GitHub:** [@umutxyp](https://github.com/umutxyp)
-- **LinkedIn:** [umutxyp](https://linkedin.com/in/umutxyp)
-- **Twitter:** [@devbayraktar](https://twitter.com/devbayraktar)
-- **Email:** umutbayraktar55@gmail.com
+- **GitHub:** https://github.com/Ashishr944
+- **LinkedIn:** https://www.linkedin.com/in/ashish-rokade-11a609393/
+- **Email:** ashishrokade1222@gmail.com
 
 ---
 
-Built with ❤️ by [Umut Bayraktar](https://github.com/umutxyp) | Powered by [Next.js](https://nextjs.org) & [Once UI](https://once-ui.com)
+Built with ❤️ by [Umut Bayraktar](https://github.com/Ashishr944) | 
+
