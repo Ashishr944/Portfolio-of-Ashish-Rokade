@@ -186,5 +186,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by [Umut Bayraktar](https://github.com/Ashishr944) | 
+Built with ❤️ by [Ashish Rokade](https://github.com/Ashishr944) | 
+
 
