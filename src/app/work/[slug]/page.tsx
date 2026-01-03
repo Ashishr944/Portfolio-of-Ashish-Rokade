@@ -44,13 +44,15 @@ export async function generateMetadata({
   if (!post) return {};
 
   return Meta.generate({
-    title: post.metadata.title,
-    description: post.metadata.summary,
-    baseURL: baseURL,
-    image: post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
-    path: `${work.path}/${post.slug}`,
-  });
-}
+  title: post.metadata.title ?? "Project",
+  description: post.metadata.summary ?? "",
+  baseURL,
+  image:
+    post.metadata.image ??
+    `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`,
+  path: `${work.path}/${post.slug}`,
+});
+
 
 export default async function Project({
   params,
@@ -79,12 +81,12 @@ export default async function Project({
         as="blogPosting"
         baseURL={baseURL}
         path={`${work.path}/${post.slug}`}
-        title={post.metadata.title}
+        title={post.metadata.title ?? "Project"}
         description={post.metadata.summary}
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
         image={
-          post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`
+          post.metadata.image ?? `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`
         }
         author={{
           name: person.name,
@@ -97,7 +99,7 @@ export default async function Project({
           <Text variant="label-strong-m">Projects</Text>
         </SmartLink>
         <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
-          {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+          {post.metadata.publishedAt ? formatDate(post.metadata.publishedAt) : null}
         </Text>
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
       </Column>
@@ -118,9 +120,16 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
-      {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+      {post.metadata.images?.length > 0 && (
+        <Media
+        priority
+        aspectRatio="16 / 9"
+        radius="m"
+        alt="image"
+        src={post.metadata.images[0]}
+        />
       )}
+
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
