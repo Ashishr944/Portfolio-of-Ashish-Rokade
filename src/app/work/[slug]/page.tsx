@@ -28,7 +28,6 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
-// Fixed: Added Promise to params type
 export async function generateMetadata({
   params,
 }: {
@@ -55,7 +54,6 @@ export async function generateMetadata({
   });
 }
 
-// Fixed: Added Promise to params type
 export default async function Project({
   params,
 }: {
@@ -85,8 +83,9 @@ export default async function Project({
         path={`${work.path}/${post.slug}`}
         title={post.metadata.title ?? "Project"}
         description={post.metadata.summary}
-        datePublished={post.metadata.publishedAt}
-        dateModified={post.metadata.publishedAt}
+        // SAFEGUARD: Ensure dates are strings for the Schema
+        datePublished={post.metadata.publishedAt ?? new Date().toISOString()}
+        dateModified={post.metadata.publishedAt ?? new Date().toISOString()}
         image={
           post.metadata.image ??
           `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`
@@ -102,9 +101,10 @@ export default async function Project({
           <Text variant="label-strong-m">Projects</Text>
         </SmartLink>
         <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
-          {post.metadata.publishedAt ? formatDate(post.metadata.publishedAt) : null}
+          {/* SAFEGUARD: Only call formatDate if publishedAt actually exists */}
+          {post.metadata.publishedAt ? formatDate(post.metadata.publishedAt) : ""}
         </Text>
-        <Heading variant="display-strong-m">{post.metadata.title}</Heading>
+        <Heading variant="display-strong-m">{post.metadata.title ?? "Untitled Project"}</Heading>
       </Column>
       <Row marginBottom="32" horizontal="center">
         <Row gap="16" vertical="center">
@@ -117,7 +117,7 @@ export default async function Project({
                     ,{" "}
                   </Text>
                 )}
-                <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
+                <SmartLink href={member.linkedIn || "#"}>{member.name}</SmartLink>
               </span>
             ))}
           </Text>
