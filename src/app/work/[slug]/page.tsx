@@ -55,10 +55,10 @@ export async function generateMetadata({
 
 
 export default async function Project({
-  params }: PageProps)
+  params }: 
   {
   params: { slug: string | string[] };
-} {
+}) {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/")
