@@ -1,12 +1,12 @@
 export function formatDate(date: string | undefined | null, includeRelative = false) {
-  // 1. Guard Clause: If date is missing or not a string, return empty
+  // 1. If date is missing, return empty string immediately to prevent crash
   if (!date || typeof date !== 'string') {
     return "";
   }
 
   const currentDate = new Date();
 
-  // 2. Safe check for "T"
+  // 2. Safely check for T
   let dateToParse = date;
   if (!dateToParse.includes("T")) {
     dateToParse = `${dateToParse}T00:00:00`;
@@ -14,7 +14,7 @@ export function formatDate(date: string | undefined | null, includeRelative = fa
 
   const targetDate = new Date(dateToParse);
   
-  // 3. Check if the date is actually valid after parsing
+  // 3. Handle invalid date strings
   if (isNaN(targetDate.getTime())) {
     return "";
   }
@@ -24,7 +24,6 @@ export function formatDate(date: string | undefined | null, includeRelative = fa
   const daysAgo = currentDate.getDate() - targetDate.getDate();
 
   let formattedDate = "";
-
   if (yearsAgo > 0) {
     formattedDate = `${yearsAgo}y ago`;
   } else if (monthsAgo > 0) {
@@ -41,9 +40,5 @@ export function formatDate(date: string | undefined | null, includeRelative = fa
     year: "numeric",
   });
 
-  if (!includeRelative) {
-    return fullDate;
-  }
-
-  return `${fullDate} (${formattedDate})`;
+  return includeRelative ? `${fullDate} (${formattedDate})` : fullDate;
 }
