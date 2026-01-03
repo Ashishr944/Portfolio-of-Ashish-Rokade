@@ -52,7 +52,7 @@ export async function generateMetadata({
     `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`,
   path: `${work.path}/${post.slug}`,
 });
-
+}
 
 export default async function Project({
   params }: 
