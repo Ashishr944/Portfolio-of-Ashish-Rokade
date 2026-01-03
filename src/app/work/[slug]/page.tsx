@@ -28,10 +28,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
+// Fixed: Added Promise to params type
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string | string[] };
+  params: Promise<{ slug: string | string[] }>;
 }): Promise<Metadata> {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
@@ -44,20 +45,21 @@ export async function generateMetadata({
   if (!post) return {};
 
   return Meta.generate({
-  title: post.metadata.title ?? "Project",
-  description: post.metadata.summary ?? "",
-  baseURL,
-  image:
-    post.metadata.image ??
-    `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`,
-  path: `${work.path}/${post.slug}`,
-});
+    title: post.metadata.title ?? "Project",
+    description: post.metadata.summary ?? "",
+    baseURL,
+    image:
+      post.metadata.image ??
+      `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`,
+    path: `${work.path}/${post.slug}`,
+  });
 }
 
+// Fixed: Added Promise to params type
 export default async function Project({
-  params }: 
-  {
-  params: { slug: string | string[] };
+  params,
+}: {
+  params: Promise<{ slug: string | string[] }>;
 }) {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
@@ -86,7 +88,8 @@ export default async function Project({
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
         image={
-          post.metadata.image ?? `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`
+          post.metadata.image ??
+          `/api/og/generate?title=${encodeURIComponent(post.metadata.title ?? "Project")}`
         }
         author={{
           name: person.name,
@@ -120,13 +123,13 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
-      {post.metadata.images?.length > 0 && (
+      {post.metadata.images && post.metadata.images.length > 0 && (
         <Media
-        priority
-        aspectRatio="16 / 9"
-        radius="m"
-        alt="image"
-        src={post.metadata.images[0]}
+          priority
+          aspectRatio="16 / 9"
+          radius="m"
+          alt="image"
+          src={post.metadata.images[0]}
         />
       )}
 
