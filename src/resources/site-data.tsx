@@ -73,9 +73,9 @@ const siteData = {
       "Passionate  full-stack developer with expertise in building dynamic web applications and Discord bots. Committed to delivering high-quality solutions that enhance user experiences and streamline digital interactions.",
     experiences: [
       {
-        company: "",
-        timeframe: "",
-        role: "",
+        company: "AB Infotech Pvt Ltd",
+        timeframe: "January 2026",
+        role: "Full Stack Developer Intern",
         achievements: [
           "",
           "",
@@ -196,3 +196,4 @@ const siteData = {
 };
 
 export default siteData;
+
