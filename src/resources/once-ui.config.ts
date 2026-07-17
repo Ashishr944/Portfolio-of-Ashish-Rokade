@@ -195,13 +195,13 @@ const schema: SchemaConfig = {
 
 // social links
 const sameAs: SameAsConfig = {
-  instagram: "https://instagram.com/umutxyp",
-  linkedin: "https://linkedin.com/in/umutxyp",
-  github: "https://github.com/umutxyp",
-  twitter: "https://twitter.com/devbayraktar",
-  youtube: "https://youtube.com/@umutxyp",
-  discord: "https://discord.gg/NrkMaPRc73",
-  telegram: "https://t.me/umutxyp",
+  instagram: "https://www.instagram.com/ashish.rokade_/",
+  linkedin: "https://www.linkedin.com/in/ashish-rokade-11a609393/",
+  github: "https://github.com/Ashishr944",
+  twitter: "",
+  youtube: "",
+  discord: "",
+  telegram: "",
 };
 
 // social sharing configuration for blog posts

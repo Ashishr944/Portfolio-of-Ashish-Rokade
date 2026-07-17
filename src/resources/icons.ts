@@ -27,6 +27,7 @@ import {
   SiNextdotjs,
   SiFigma,
   SiSupabase,
+  SiLeetcode,
 } from "react-icons/si";
 
 import {
@@ -79,6 +80,7 @@ export const iconLibrary: Record<string, IconType> = {
   whatsapp: FaWhatsapp,
   reddit: FaReddit,
   telegram: FaTelegram,
+  leetcode: SiLeetcode,
 };
 
 export type IconLibrary = typeof iconLibrary;

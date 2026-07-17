@@ -100,22 +100,22 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about code, community, and content",
-  description: `Notes on CodeShare, creators, and automation experiments by ${person.name}`,
+  title: "Writing about AI, full-stack engineering, and projects",
+  description: `Notes on AI applications, APIs, deployment, and full-stack projects by ${person.name}`,
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects - ${person.name}`,
-  description: `Software, marketplaces, and community experiments by ${person.name}`,
+  description: `AI, full-stack, real-time, analytics, and browser-based projects by ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: `Product gallery - ${person.name}`,
-  description: "Screens from CodeShare, Beatra, Vip Transfer Turkey, and DNZ Geri Dönüşüm.",
+  description: "Screens from Ashish Rokade's portfolio, student progress system, and web application projects.",
   images: siteData.gallery.map((src, index) => ({
     src,
     alt: `showcase-${index + 1}`,
