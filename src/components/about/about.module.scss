@@ -1,0 +1,20 @@
+.avatar {
+  align-self: flex-start;
+}
+
+.blockAlign {
+  align-items: flex-start;
+}
+
+.textAlign {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .blockAlign {
+    align-items: center;
+  }
+  .textAlign {
+    text-align: center;
+  }
+}

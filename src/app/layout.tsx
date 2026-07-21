@@ -3,18 +3,17 @@ import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
 
 import classNames from "classnames";
-
 import {
   Background,
   Column,
   Flex,
   Meta,
-  opacity,
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -25,6 +24,7 @@ export async function generateMetadata() {
     image: home.image,
   });
 }
+
 
 export default async function RootLayout({
   children,
