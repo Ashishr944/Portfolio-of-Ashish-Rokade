@@ -1,4 +1,4 @@
-Link for my live portfolio: https://ashishrokade.vercel.app
+Link for my live portfolio: [Link](https://ashishrokade.vercel.app)
 # Ashish Rokade - Portfolio
 
 Modern, high-performance portfolio website built with Next.js 15, Once UI, and TypeScript. Showcasing projects, experience, and technical expertise as a Full-Stack Developer and Founder of CodeShare Technology Ltd.
@@ -187,7 +187,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by [Ashish Rokade](https://github.com/Ashishr944) | 
+Built by [Ashish Rokade](https://github.com/Ashishr944) | 
 
 
 
